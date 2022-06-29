@@ -1,0 +1,237 @@
+<resources>
+
+    <style name="SimpleToolbar" parent="Theme.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <!-- <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item> -->
+        <item name="android:background">?android:attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="FireControlText" parent="FireText">
+        <item name="android:textColor">?android:attr/colorPrimary</item>
+    </style>
+
+    <style name="FireText">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="android:fontFamily">@font/exo2_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingStart">0dp</item>
+    </style>
+
+    <style name="BoldFireText">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="android:fontFamily">@font/exo2_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="FireToolBarTitle">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:fontFamily">@font/exo2_regular</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="LightTextLink" parent="TextLink">
+        <item name="android:background">@drawable/background_link_light</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="Button" parent="FireControlText">
+        <item name="cornerRadius">0dp</item>
+        <item name="backgroundTint">?attr/colorControlNormal</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AccentButton" parent="Button">
+        <item name="backgroundTint">?android:attr/colorAccent</item>
+    </style>
+
+    <style name="AccentBoldButton" parent="ButtonBold">
+        <item name="backgroundTint">?android:attr/colorAccent</item>
+    </style>
+
+    <style name="FireCheckBox">
+        <item name="android:background">@drawable/background_checkbox</item>
+        <item name="android:button">@drawable/checkbox_selector</item>
+    </style>
+
+    <style name="FireTextView" parent="FireText">
+        <item name="android:backgroundTint">?attr/colorPrimarySurface</item>
+        <item name="android:background">@drawable/background_button</item>
+        <item name="android:paddingTop">17dp</item>
+        <item name="android:paddingBottom">17dp</item>
+        <item name="android:paddingStart">23dp</item>
+        <item name="android:paddingEnd">23dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="LightTitleText" parent="subscriptionItemTitle">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="BigLightFireText" parent="FireText">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:fontFamily">@font/exo2_regular</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="TextButton" parent="FireTextView">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="android:backgroundTint">@color/colorTransparent</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="WhiteTextButton" parent="TextButton">
+        <item name="android:backgroundTint">?attr/colorPrimarySurface</item>
+    </style>
+
+    <style name="BigTextButton" parent="TextButton">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/exo2_bold</item>
+    </style>
+
+    <style name="LinedTextButton" parent="BigTextButton">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/exo2_bold</item>
+        <item name="android:backgroundTint">?attr/colorControlNormal</item>
+        <item name="android:background">@drawable/background_bottom_line</item>
+    </style>
+
+    <style name="BigSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="FireSwitch">
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_gravity">center|end</item>
+        <item name="android:clickable">false</item>
+        <item name="kswBackDrawable">@drawable/background_switch_selector</item>
+        <item name="kswThumbColor">@drawable/background_switch_thumb_selector</item>
+        <item name="kswThumbMargin">4dp</item>
+        <item name="kswThumbWidth">24dp</item>
+        <item name="kswThumbRangeRatio">2.2</item>
+    </style>
+
+    <style name="FireRadioText" parent="FireText">
+        <item name="android:background">@color/colorTransparent</item>
+        <item name="android:paddingStart">@dimen/content_width_post_login_margin</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawableEnd">@drawable/background_radio_btn_selector</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="FireSelectableItem" parent="FireRadioText">
+        <item name="android:backgroundTint">?attr/colorPrimarySurface</item>
+        <item name="android:background">@drawable/background_button</item>
+        <item name="android:paddingEnd">15dp</item>
+    </style>
+
+    <style name="GridItem">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">13dp</item>
+        <item name="android:layout_marginEnd">13dp</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:layout_marginBottom">7dp</item>
+    </style>
+    
+    <style name="FireActionImage">
+        <item name="android:backgroundTint">@color/colorTransparent</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="FireNumberText">
+        <item name="android:background">@drawable/background_pin_button</item>
+        <item name="android:backgroundTint">?attr/colorOnSurface</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/exo2_regular</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="EventText">
+        <item name="android:background">@drawable/background_event</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/exo2_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CallToAction" parent="BoldFireText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">14dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="MarqueeTextTitle" parent="SmallTitleText">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="MarqueeText" parent="FireText">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="MarqueeBoldText" parent="BoldFireText">
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="SmallFireTextWithBackground" parent="SmallFireText">
+        <item name="android:background">@drawable/background_gradient_line</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+    </style>
+
+    <style name="FireInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="errorEnabled">true</item>
+        <item name="errorTextAppearance">@style/ErrorFireText</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+    <style name="FireHintText">
+        <item name="android:textColor">?attr/hintTextColor</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@font/exo2_regular</item>
+    </style>
+
+    <style name="FireSubscriptionHint">
+        <item name="android:textColor">@color/colorSubHintText</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/exo2_medium</item>
+    </style>
+
+    <style name="FireSubscriptionMainText">
+        <item name="android:fontFamily">@font/exo2_bold</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

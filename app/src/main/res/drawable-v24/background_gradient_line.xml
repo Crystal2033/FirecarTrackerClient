@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Owlsight background_gradient_line.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:14
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:endColor="#00292F4E"
+        android:startColor="#80292F4E" />
+</shape>

@@ -1,0 +1,21 @@
+<!--
+  ~  Owlsight background_event.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:10
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="25dp"
+    android:height="25dp"
+    android:alpha="0.99"
+    android:autoMirrored="true"
+    android:viewportWidth="25"
+    android:viewportHeight="25">
+    <path
+        android:fillColor="#FF003D"
+        android:pathData="M12.5,12.5m-12.5,0a12.5,12.5 0,1 1,25 0a12.5,12.5 0,1 1,-25 0" />
+</vector>

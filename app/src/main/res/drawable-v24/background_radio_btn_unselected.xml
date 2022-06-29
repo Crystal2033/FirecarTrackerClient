@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Owlsight background_radio_btn_unselected.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:14
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="17dp"
+    android:height="12dp"
+    android:alpha="0.99"
+    android:autoMirrored="true"
+    android:viewportWidth="17"
+    android:viewportHeight="12">
+    <path
+        android:pathData="M1.4286,4.8571L6.5715,10L15.5714,1"
+        android:strokeWidth="2"
+        android:strokeColor="@color/colorTransparent" />
+</vector>

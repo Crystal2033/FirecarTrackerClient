@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Owlsight dialog_accept.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:14
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface"
+    android:padding="@dimen/left_right_bottom_padding_dialog">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/acceptDialogContent"
+        style="@style/subscriptionItemTitle"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/acceptDialogButtonYes"
+        style="@style/Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="12dp"
+        android:text="@string/yes"
+        app:layout_constraintEnd_toStartOf="@id/acceptDialogButtonNo"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acceptDialogContent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/acceptDialogButtonNo"
+        style="@style/AccentButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/acceptDialogButtonYes"
+        app:layout_constraintTop_toBottomOf="@id/acceptDialogContent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

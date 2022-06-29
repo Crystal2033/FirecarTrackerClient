@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Owlsight background_switch_checked.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:14
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="60dp"
+    android:height="32dp"
+    android:viewportWidth="60"
+    android:viewportHeight="32">
+    <path
+        android:fillColor="?attr/colorOnSurface"
+        android:pathData="M16,0.5L44,0.5A15.5,15.5 0,0 1,59.5 16L59.5,16A15.5,15.5 0,0 1,44 31.5L16,31.5A15.5,15.5 0,0 1,0.5 16L0.5,16A15.5,15.5 0,0 1,16 0.5z"
+        android:strokeWidth="1"
+        android:strokeColor="?attr/colorOnSurface" />
+</vector>

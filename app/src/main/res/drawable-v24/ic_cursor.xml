@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Owlsight ic_cursor.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:14
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <size android:width="2dp" />
+    <solid android:color="?android:attr/colorAccent"  />
+</shape>

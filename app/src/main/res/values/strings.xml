@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Fireman</string>
+
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="data_no_loaded">Data not loaded, please wait</string>
+
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="something_went_wrong">Something went wrong…</string>
+
+    <string name="server_unauthorized">You must relogin</string>
+    <string name="server_timeout">Operation aborted with a very long lead time</string>
+    <string name="server_internal_error">Internal server error. Our team is already fixing this</string>
+    <string name="server_no_internet_connection_error">Unknown host, check the internet connection</string>
+    <string name="server_response_not_supported">Server response is not supported</string>
+    <string name="server_unhandled_error">Unknown server error. Our team is already fixing this</string>
+    <string name="exit_invite">Для выхода нажмите на кнопку еще раз</string>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+
+    <color name="colorWindowBackground">#E5E5E5</color>
+    <color name="colorWindowBackgroundNight">#14182C</color>
+
+    <color name="colorSurface">#F2F1F7</color>
+    <color name="colorSurfaceNight">#1F2440</color>
+
+    <color name="colorPrimarySurface">#FCFBFE</color>
+    <color name="colorPrimarySurfaceNight">@color/colorPrimary</color>
+
+    <color name="colorPrimary">#292F4E</color>
+    <color name="colorPrimaryNight">@color/colorPrimary</color>
+
+    <color name="colorPrimaryVariant">@color/colorPrimary</color>
+    <color name="colorPrimaryVariantNight">@color/colorSurfaceNight</color>
+
+    <color name="colorPrimaryDark">@color/colorPrimary</color>
+    <color name="colorPrimaryDarkNight">@color/colorPrimary</color>
+
+    <color name="colorAccent">#FFE100</color>
+    <color name="colorAccentNight">@color/colorAccent</color>
+
+    <color name="colorOnBackground">@color/colorPrimary</color>
+    <color name="colorOnBackgroundNight">@color/white</color>
+
+    <color name="colorOnSurface">@color/colorPrimary</color>
+    <color name="colorOnSurfaceNight">@color/white</color>
+
+    <color name="colorOnPrimaryNight">@color/white</color>
+
+    <color name="colorOnSecondary">@color/colorPrimary</color>
+    <color name="colorOnSecondaryNight">@color/colorPrimary</color>
+
+    <color name="colorOnPrimarySurface">@color/white</color>
+    <color name="colorOnPrimarySurfaceNight">@color/colorPrimary</color>
+
+    <color name="colorError">#FF003D</color>
+    <color name="colorErrorNight">#FF0000</color>
+
+    <color name="colorOutline">#CACAD5</color>
+    <color name="colorOutlineNight">@color/colorOutline</color>
+
+    <color name="colorDisabledControl">@color/colorOutline</color>
+    <color name="colorDisabledControlNight">@color/colorSurfaceNight</color>
+
+    <color name="colorHint">#66FFFFFF</color>
+    <color name="colorHintNight">@color/colorHint</color>
+
+    <color name="colorLightSurface">@color/colorOutline</color>
+
+    <color name="colorReversedPrimary">@color/colorPrimary</color>
+
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorOverlay">#AE000000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorSubHintText">#7A7c91</color>
+
+    <color name="colorCalendarDayColor">@color/white</color>
+    <color name="colorCalendarPickedDay">@color/colorPrimary</color>
+    <color name="colorCalendarBackground">@color/colorWindowBackground</color>
+
+    <color name="colorsWhitAlpha80">#80FFFFFF</color>
+
+    <color name="colorBrightViolet">#684EC7</color>
+
+    <color name="colorEventShimmer">#DEDDE4</color>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Owlsight ic_progress_intermediate.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:14
+  -->
+
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:repeatCount="infinite"
+    android:toDegrees="1080">
+    <shape
+        android:shape="ring"
+        android:thicknessRatio="20"
+        android:useLevel="false">
+        <size
+            android:width="18dip"
+            android:height="18dip" />
+
+        <gradient
+            android:centerColor="#9E9EA0"
+            android:centerY="0.50"
+            android:endColor="#F8F8F9"
+
+            android:startColor="#474B55"
+            android:type="sweep"
+            android:useLevel="false" />
+    </shape>
+</rotate>

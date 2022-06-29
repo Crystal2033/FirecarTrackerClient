@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Firesight styles_const.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:14
+  -->
+
+<resources>
+
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/nav_default_enter_anim</item>
+        <item name="android:activityOpenExitAnimation">@anim/nav_default_exit_anim</item>
+        <item name="android:activityCloseEnterAnimation">@anim/nav_default_enter_anim</item>
+        <item name="android:activityCloseExitAnimation">@anim/nav_default_exit_anim</item>
+    </style>
+
+    <style name="ErrorFireText" parent="TextAppearance.Design.Error">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/exo2_light</item>
+    </style>
+
+    <style name="SmallFireText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/exo2_light</item>
+    </style>
+
+    <style name="SmallGrayText" parent="FireText">
+        <item name="android:alpha">0.5</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="FireSmallCenterText" parent="FireText">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="subscriptionItemTitle" parent="FireText">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/exo2_bold</item>
+    </style>
+
+    <style name="SmallTitleText" parent="FireText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/exo2_bold</item>
+    </style>
+
+    <style name="TextInput" parent="FireText">
+        <item name="android:background">@drawable/background_text_edit_enabled_selector</item>
+        <item name="android:padding">17dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textCursorDrawable">@drawable/ic_cursor</item>
+    </style>
+
+
+    <style name="BigTextInput" parent="TextInput">
+        <item name="android:padding">17dp</item>
+        <item name="android:minHeight">168dp</item>
+        <item name="android:gravity">top</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+    </style>
+
+    <style name="TextLink" parent="FireText">
+        <item name="android:background">@drawable/background_link</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ButtonBold" parent="Button">
+        <item name="android:fontFamily">@font/exo2_bold</item>
+    </style>
+
+    <style name="SmallAccentButton" parent="AccentBoldButton">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+    </style>
+
+</resources>

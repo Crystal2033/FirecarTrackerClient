@@ -1,0 +1,21 @@
+<!--
+  ~  Owlsight ic_back_arrow.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:09
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="25dp"
+    android:height="15dp"
+    android:viewportWidth="25"
+    android:viewportHeight="15">
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M25,7.5L1,7.5M1,7.5L7.5,14M1,7.5L7.5,1"
+        android:strokeWidth="1"
+        android:strokeColor="#ffffff" />
+</vector>

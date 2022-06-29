@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Owlsight background_bottom_line.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:14
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="0.5dp"
+    android:viewportWidth="327"
+    android:viewportHeight="56">
+
+    <group>
+
+        <clip-path android:pathData="M0 0H327V56H0V0Z" />
+
+        <path
+            android:pathData="M0 56H327"
+
+            android:strokeWidth="2"
+            android:strokeColor="?attr/colorControlNormal" />
+    </group>
+
+</vector>

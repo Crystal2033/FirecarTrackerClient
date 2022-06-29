@@ -1,0 +1,21 @@
+<!--
+  ~  Owlsight dimens.xml
+  ~  Created by frostik0409@gmail.com
+  ~  Kirill Stulnikov (Woipot)
+  ~  on 29.05.20 16:56
+  ~
+  ~  Copyright © 2019 Petr Baev. All rights reserved.
+  ~  Last modified 29.05.20 16:09
+  -->
+
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="content_width_margin">16dp</dimen>
+    <dimen name="default_title_margin">30dp</dimen>
+    <dimen name="content_width_post_login_margin">24dp</dimen>
+    <dimen name="content_top_padding">30dp</dimen>
+    <dimen name="content_bottom_padding">20dp</dimen>
+    <dimen name="settings_title_top_margin">20dp</dimen>
+    <dimen name="bottom_padding_post_login">50dp</dimen>
+    <dimen name="left_right_bottom_padding_dialog">12dp</dimen>
+</resources>
