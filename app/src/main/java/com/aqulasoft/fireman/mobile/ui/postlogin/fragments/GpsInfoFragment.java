@@ -76,7 +76,6 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-
     }
 
     @Override
@@ -149,5 +148,7 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
     public void onClickLocationSettings(View view) {
         startActivity(new Intent(
                 android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-    };
+    }
+
+    ;
 }
