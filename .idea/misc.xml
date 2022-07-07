@@ -3,12 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/activity_main.xml" value="0.3148148148148148" />
-        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/dialog_accept.xml" value="0.19655521783181357" />
-        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/fragment_gps_info.xml" value="0.19655521783181357" />
-        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/fragment_kulikov.xml" value="0.16818642350557245" />
-        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/fragment_kulikov_pavel.xml" value="0.264" />
-        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/toolbar_logo.xml" value="0.19655521783181357" />
+        <entry key="..\:/Users/Timofey.LAPTOP-KQGJSA46/JetBrains/IdeaProjects/Aqula/Android/FR_13/TrackerClient/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Timofey.LAPTOP-KQGJSA46/JetBrains/IdeaProjects/Aqula/Android/FR_13/TrackerClient/app/src/main/res/layout/dialog_accept.xml" value="0.1" />
+        <entry key="..\:/Users/Timofey.LAPTOP-KQGJSA46/JetBrains/IdeaProjects/Aqula/Android/FR_13/TrackerClient/app/src/main/res/layout/fragment_gps_info.xml" value="0.1" />
+        <entry key="..\:/Users/Timofey.LAPTOP-KQGJSA46/JetBrains/IdeaProjects/Aqula/Android/FR_13/TrackerClient/app/src/main/res/layout/toolbar_logo.xml" value="0.1" />
         <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_bottom_line.xml" value="0.1" />
         <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_button.xml" value="0.1" />
         <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_checkbox.xml" value="0.1" />
@@ -39,7 +37,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -18,6 +18,8 @@
     <string name="server_response_not_supported">Server response is not supported</string>
     <string name="server_unhandled_error">Unknown server error. Our team is already fixing this</string>
     <string name="exit_invite">Для выхода нажмите на кнопку еще раз</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello Kulikov Pavel</string>
+
+    <string name="provider_gps">GPS</string>
+    <string name="provider_network">Network</string>
+    <string name="location_settings">Location settings</string>
 </resources>
