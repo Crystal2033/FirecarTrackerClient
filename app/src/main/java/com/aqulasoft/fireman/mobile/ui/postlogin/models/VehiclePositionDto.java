@@ -1,12 +1,18 @@
 package com.aqulasoft.fireman.mobile.ui.postlogin.models;
 
 
+import android.location.Location;
+
 public class VehiclePositionDto {
     private float longitude;
     private float latitude;
     private String eventId;
 
-
+    public VehiclePositionDto(Location location, String eventId){
+        longitude = (float) location.getLongitude();
+        latitude = (float) location.getLatitude();
+        this.eventId = eventId;
+    }
     public float getLongitude() {
         return longitude;
     }

@@ -18,6 +18,8 @@ import com.aqulasoft.fireman.mobile.databinding.FragmentGpsInfoBinding;
 import com.aqulasoft.fireman.mobile.ui.base.BaseFragment;
 import com.aqulasoft.fireman.mobile.ui.postlogin.models.LocationSender;
 
+
+import java.io.IOException;
 import java.util.Date;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -33,7 +35,6 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
     GpsInfoPresenter mPresenter;
     Location currentLocation = null;
 
-    LocationSender locationSender = new LocationSender();
     private LocationManager locationManager;
 
     private LocationListener locationListener = new LocationListener() {
@@ -85,14 +86,16 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
                 .subscribe(this::sendData);
     }
 
-    public void sendData(Location location){
-        locationSender.savePosition(location);
+    public void sendData(Location location) {
+        System.out.println(location.getLatitude());
+        System.out.println(location.getLongitude());
+        System.out.println("\n");
     }
 
     public Observable<Location> schedule() {
         return Observable.create(subscriber -> {
                     while (true) {
-                        Thread.sleep(1000);
+                        Thread.sleep(3000);
                         if (currentLocation != null) {
                             subscriber.onNext(currentLocation);
                         }
