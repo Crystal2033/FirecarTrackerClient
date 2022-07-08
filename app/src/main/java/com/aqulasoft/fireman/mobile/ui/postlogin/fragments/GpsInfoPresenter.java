@@ -11,7 +11,6 @@
 package com.aqulasoft.fireman.mobile.ui.postlogin.fragments;
 
 import com.aqulasoft.fireman.mobile.ui.base.BasePresenter;
-import com.aqulasoft.fireman.mobile.ui.postlogin.MainView;
 
 import moxy.InjectViewState;
 

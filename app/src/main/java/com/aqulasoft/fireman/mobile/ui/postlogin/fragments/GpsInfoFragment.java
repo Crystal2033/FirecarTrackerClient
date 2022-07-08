@@ -8,38 +8,39 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.aqulasoft.fireman.mobile.R;
 import com.aqulasoft.fireman.mobile.databinding.FragmentGpsInfoBinding;
 import com.aqulasoft.fireman.mobile.ui.base.BaseFragment;
-import com.aqulasoft.fireman.mobile.ui.postlogin.MainActivity;
+import com.aqulasoft.fireman.mobile.ui.postlogin.models.LocationSender;
 
 import java.util.Date;
 
-import javax.inject.Inject;
-
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 import moxy.presenter.InjectPresenter;
 
 
 public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implements GpsInfoView {
+
     @InjectPresenter
     GpsInfoPresenter mPresenter;
+    Location currentLocation = null;
 
+    LocationSender locationSender = new LocationSender();
     private LocationManager locationManager;
 
     private LocationListener locationListener = new LocationListener() {
 
         @Override
         public void onLocationChanged(Location location) {
+            currentLocation = location;
             showLocation(location);
         }
 
@@ -55,6 +56,7 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
                     && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
+
             showLocation(locationManager.getLastKnownLocation(provider));
         }
 
@@ -76,12 +78,34 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+
+        Disposable dispose = schedule()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(this::sendData);
+    }
+
+    public void sendData(Location location){
+        locationSender.savePosition(location);
+    }
+
+    public Observable<Location> schedule() {
+        return Observable.create(subscriber -> {
+                    while (true) {
+                        Thread.sleep(1000);
+                        if (currentLocation != null) {
+                            subscriber.onNext(currentLocation);
+                        }
+                    }
+                }
+        );
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mBinding.btnLocationSettings.setOnClickListener(this::onClickLocationSettings);
+
     }
 
     @Override
@@ -128,13 +152,20 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
     }
 
     private String formatLocation(Location location) {
-        if (location == null)
+        if (location == null) {
             return "";
+        }
+        System.out.println(String.format(
+                "Coordinates: lat = %1$.4f, lon = %2$.4f, time = %3$tF %3$tT",
+                location.getLatitude(), location.getLongitude(), new Date(
+                        location.getTime())));
+
         return String.format(
                 "Coordinates: lat = %1$.4f, lon = %2$.4f, time = %3$tF %3$tT",
                 location.getLatitude(), location.getLongitude(), new Date(
                         location.getTime()));
     }
+
 
     private void checkEnabled() {
         mBinding.tvEnabledGPS.setText("Enabled: "
@@ -143,6 +174,7 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
         mBinding.tvEnabledNet.setText("Enabled: "
                 + locationManager
                 .isProviderEnabled(LocationManager.NETWORK_PROVIDER));
+
     }
 
     public void onClickLocationSettings(View view) {
@@ -150,5 +182,4 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
                 android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
     }
 
-    ;
 }
