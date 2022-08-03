@@ -14,9 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
+import com.aqulasoft.fireman.mobile.base.repository.tracker.TrackerService;
 import com.aqulasoft.fireman.mobile.databinding.FragmentGpsInfoBinding;
 import com.aqulasoft.fireman.mobile.ui.base.BaseFragment;
-import com.aqulasoft.fireman.mobile.ui.postlogin.models.LocationSender;
+import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehiclePositionRequest;
+import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehicleStatRequest;
 
 
 import java.io.IOException;
@@ -27,6 +29,7 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import moxy.presenter.InjectPresenter;
+import retrofit2.Retrofit;
 
 
 public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implements GpsInfoView {
@@ -36,6 +39,7 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
     Location currentLocation = null;
 
     private LocationManager locationManager;
+    private TrackerService trackerService;
 
     private LocationListener locationListener = new LocationListener() {
 
@@ -73,7 +77,9 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
 
     public GpsInfoFragment() {
         // Required empty public constructor
+        trackerService = new TrackerService();
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,12 +96,17 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
         System.out.println(location.getLatitude());
         System.out.println(location.getLongitude());
         System.out.println("\n");
+
+        VehicleStatRequest vehicleStatRequest = new VehicleStatRequest();
+        vehicleStatRequest.setVehicleId("543");
+        trackerService.addVehicle(vehicleStatRequest);
+
     }
 
     public Observable<Location> schedule() {
         return Observable.create(subscriber -> {
                     while (true) {
-                        Thread.sleep(3000);
+                        Thread.sleep(1000);
                         if (currentLocation != null) {
                             subscriber.onNext(currentLocation);
                         }
