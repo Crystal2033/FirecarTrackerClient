@@ -38,7 +38,7 @@ public class TrackerService {
                 .subscribe(new DisposableSingleObserver<VehicleStatRequest>() {
                     @Override
                     public void onSuccess(@NonNull VehicleStatRequest request) {
-                        System.out.println(request);
+                        System.out.println(request + " Yahoooo");
                     }
 
                     @Override
