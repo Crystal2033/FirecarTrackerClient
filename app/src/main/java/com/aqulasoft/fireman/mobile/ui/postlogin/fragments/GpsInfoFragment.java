@@ -1,5 +1,7 @@
 package com.aqulasoft.fireman.mobile.ui.postlogin.fragments;
 
+import static com.aqulasoft.fireman.mobile.base.utils.FiremanSettings.LOCATION_SEND_TIME_INTERVAL;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -17,11 +19,8 @@ import androidx.core.app.ActivityCompat;
 import com.aqulasoft.fireman.mobile.base.repository.tracker.TrackerService;
 import com.aqulasoft.fireman.mobile.databinding.FragmentGpsInfoBinding;
 import com.aqulasoft.fireman.mobile.ui.base.BaseFragment;
-import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehiclePositionRequest;
 import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehicleStatRequest;
 
-
-import java.io.IOException;
 import java.util.Date;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -29,7 +28,6 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import moxy.presenter.InjectPresenter;
-import retrofit2.Retrofit;
 
 
 public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implements GpsInfoView {
@@ -97,16 +95,14 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
         System.out.println(location.getLongitude());
         System.out.println("\n");
 
-        VehicleStatRequest vehicleStatRequest = new VehicleStatRequest();
-        vehicleStatRequest.setVehicleId("543");
-        trackerService.addVehicle(vehicleStatRequest);
+
 
     }
 
     public Observable<Location> schedule() {
         return Observable.create(subscriber -> {
                     while (true) {
-                        Thread.sleep(1000);
+                        Thread.sleep(LOCATION_SEND_TIME_INTERVAL);
                         if (currentLocation != null) {
                             subscriber.onNext(currentLocation);
                         }

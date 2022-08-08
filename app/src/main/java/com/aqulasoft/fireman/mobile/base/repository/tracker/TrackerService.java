@@ -8,6 +8,7 @@ import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehiclePositionRequest;
 import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehicleStatRequest;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.observers.DisposableObserver;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import retrofit2.Retrofit;
@@ -33,17 +34,27 @@ public class TrackerService {
 
     public void addVehicle(VehicleStatRequest req) {
         trackerApi.addVehicle(req)
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.computation())
+                .doOnNext(  x -> {
+                    System.out.println(x.getVehicleId() + " This is vehicle Id next on " + Thread.currentThread().getName());
+                } )
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new DisposableSingleObserver<VehicleStatRequest>() {
+                .subscribe(new DisposableObserver<VehicleStatRequest>() {
+
                     @Override
-                    public void onSuccess(@NonNull VehicleStatRequest request) {
-                        System.out.println(request + " Yahoooo");
+                    public void onNext(@NonNull VehicleStatRequest request) {
+                        System.out.println(request + " Yahooo car has been added " + req.getVehicleId() +  " " +  Thread.currentThread().getName());
+
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
                         System.out.println(e + " FUCK");
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        System.out.println("Done");
                     }
                 });
     }

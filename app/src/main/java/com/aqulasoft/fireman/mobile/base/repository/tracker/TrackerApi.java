@@ -17,6 +17,6 @@ public interface TrackerApi {
     Observable<VehiclePositionRequest> addLocationsPack(@Body VehiclePositionRequest request);
 
     @POST("/api/vehicle")
-    Single<VehicleStatRequest> addVehicle(@Body VehicleStatRequest vehicleStatRequest);
+    Observable<VehicleStatRequest> addVehicle(@Body VehicleStatRequest vehicleStatRequest);
 }
 

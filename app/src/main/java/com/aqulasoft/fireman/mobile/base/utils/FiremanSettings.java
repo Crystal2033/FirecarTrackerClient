@@ -20,4 +20,6 @@ public class FiremanSettings {
 
     public static final int EXIT_TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
     public static final String TRACKER_HOSTNAME = "http://10.0.2.2:18711";
+    public static final int LOCATION_SEND_TIME_INTERVAL = 4000;
+
 }
