@@ -1,7 +1,9 @@
 package com.aqulasoft.fireman.mobile.ui.postlogin.fragments;
 
+import static com.aqulasoft.fireman.mobile.base.utils.FiremanSettings.LOCATION_GPS_TIME_UPDATE;
 import static com.aqulasoft.fireman.mobile.base.utils.FiremanSettings.LOCATION_PACK_SIZE;
 import static com.aqulasoft.fireman.mobile.base.utils.FiremanSettings.LOCATION_SEND_TIME_INTERVAL;
+import static com.aqulasoft.fireman.mobile.base.utils.FiremanSettings.NETWORK_PROVIDER_TIME_UPDATE;
 
 import android.Manifest;
 import android.content.Context;
@@ -43,7 +45,7 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
 
     private ArrayList<VehiclePositionDto> lastLocations;
     private String vehicleId = "PaulVehicle"; //TODO: delete this field in future, need to get this data
-    private String eventId = "60"; //TODO: delete this field in future, need to get this data
+    private String eventId = "74"; //TODO: delete this field in future, need to get this data
 
     private LocationListener locationListener = new LocationListener() {
 
@@ -103,11 +105,11 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
         System.out.println("\n");
         //TODO: Getting vehicleId and Getting eventId
 
-        lastLocations.add(new VehiclePositionDto(location, eventId));
-        if (lastLocations.size() > LOCATION_PACK_SIZE) {
-            System.out.println("Sending data...");
-            trackerService.addPoints(lastLocations, vehicleId);
-        }
+//        lastLocations.add(new VehiclePositionDto(location, eventId));
+//        if (lastLocations.size() > LOCATION_PACK_SIZE) {
+//            System.out.println("Sending data...");
+//            trackerService.addPoints(lastLocations, vehicleId);
+//        }
     }
 
     public Observable<Location> schedule() {
@@ -144,9 +146,9 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
             return;
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-                1000 * 10, 10, locationListener);
+                LOCATION_GPS_TIME_UPDATE, 10, locationListener);
         locationManager.requestLocationUpdates(
-                LocationManager.NETWORK_PROVIDER, 1000 * 10, 10,
+                LocationManager.NETWORK_PROVIDER, NETWORK_PROVIDER_TIME_UPDATE, 10,
                 locationListener);
         checkEnabled();
     }

@@ -36,7 +36,6 @@ public class TrackerService {
                 .doOnNext(request -> { //computation thread
                             System.out.println("ThreadName : " + Thread.currentThread().getName());
                             System.out.println("Vehicle: " + request.getVehicleId());
-
                         }
                 )
                 .observeOn(AndroidSchedulers.mainThread()) //everything under is on the main thread
@@ -46,13 +45,6 @@ public class TrackerService {
                         System.out.println("ThreadName : " + Thread.currentThread().getName());
                         System.out.println("Vehicle: " + request.getVehicleId());
                         PrintLocations(request);
-                    }
-
-                    private void PrintLocations(@NonNull VehiclePositionRequest request) {
-                        int i = 0;
-                        for (VehiclePositionDto pos : request.getPositions()) {
-                            System.out.println(++i + ". ( " + pos.getLatitude() + ", " + pos.getLongitude() + " )");
-                        }
                     }
 
                     @Override
@@ -80,7 +72,6 @@ public class TrackerService {
                     @Override
                     public void onNext(@NonNull VehicleStatRequest request) {
                         System.out.println(request + "Car has been added " + req.getVehicleId() + " " + Thread.currentThread().getName());
-
                     }
 
                     @Override
@@ -93,5 +84,13 @@ public class TrackerService {
                         System.out.println("Done");
                     }
                 });
+    }
+
+
+    private void PrintLocations(@NonNull VehiclePositionRequest request) {
+        int i = 0;
+        for (VehiclePositionDto pos : request.getPositions()) {
+            System.out.println(++i + ". ( " + pos.getLatitude() + ", " + pos.getLongitude() + " )");
+        }
     }
 }

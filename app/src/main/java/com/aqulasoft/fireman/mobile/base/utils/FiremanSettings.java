@@ -20,5 +20,7 @@ public class FiremanSettings {
     public static final String TRACKER_HOSTNAME = "http://10.0.2.2:18711";
     public static final int LOCATION_SEND_TIME_INTERVAL = 2000;
     public static final int LOCATION_PACK_SIZE = 5;
+    public static final int LOCATION_GPS_TIME_UPDATE = 1000; //ms
+    public static final int NETWORK_PROVIDER_TIME_UPDATE = 1000; //ms
 
 }

@@ -29,6 +29,7 @@
                 android:fontFamily="@font/graduate"
                 android:text="@string/provider_gps"
                 android:textAlignment="center"
+                android:textColor="@color/colorSubHintText"
                 android:textSize="24sp"
                 android:textStyle="bold|italic"
                 app:layout_constraintBottom_toTopOf="@+id/tvLocationGPS"
@@ -40,11 +41,11 @@
 
             <TextView
                 android:id="@+id/tvLocationGPS"
-                android:layout_width="371dp"
-                android:layout_height="104dp"
+                android:layout_width="350dp"
+                android:layout_height="93dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/graduate"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/tvEnabledGPS"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -53,11 +54,11 @@
 
             <TextView
                 android:id="@+id/tvEnabledGPS"
-                android:layout_width="358dp"
-                android:layout_height="39dp"
+                android:layout_width="350dp"
+                android:layout_height="42dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/graduate"
-                android:textAlignment="center"
+                android:textAlignment="viewStart"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/tvStatusGPS"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -66,8 +67,8 @@
 
             <TextView
                 android:id="@+id/tvStatusGPS"
-                android:layout_width="332dp"
-                android:layout_height="21dp"
+                android:layout_width="350dp"
+                android:layout_height="23dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/graduate"
                 android:textSize="20sp"
@@ -135,34 +136,35 @@
 
             <TextView
                 android:id="@+id/tvEnabledNet"
-                android:layout_width="347dp"
-                android:layout_height="46dp"
+                android:layout_width="350dp"
+                android:layout_height="54dp"
                 android:layout_marginBottom="28dp"
                 android:fontFamily="@font/graduate"
-                android:textAlignment="center"
+                android:textAlignment="viewStart"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/tvStatusNet"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintHorizontal_bias="0.615"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/tvStatusNet"
-                android:layout_width="321dp"
+                android:layout_width="350dp"
                 android:layout_height="26dp"
                 android:fontFamily="@font/graduate"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.615"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/tvLocationNet"
-                android:layout_width="365dp"
+                android:layout_width="350dp"
                 android:layout_height="85dp"
                 android:layout_marginBottom="28dp"
                 android:fontFamily="@font/graduate"
-                android:textAlignment="center"
+                android:textAlignment="viewStart"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/tvEnabledNet"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -177,6 +179,7 @@
                 android:text="@string/provider_network"
                 android:textAlignment="center"
                 android:textAllCaps="false"
+                android:textColor="@color/colorSubHintText"
                 android:textSize="24sp"
                 android:textStyle="bold|italic"
                 app:layout_constraintBottom_toTopOf="@+id/tvLocationNet"
