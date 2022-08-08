@@ -8,11 +8,12 @@ public class VehiclePositionDto {
     private float latitude;
     private String eventId;
 
-    public VehiclePositionDto(Location location, String eventId){
-        longitude = (float) location.getLongitude();
-        latitude = (float) location.getLatitude();
-        this.eventId = eventId;
+    public VehiclePositionDto(Location location, String eventId) {
+        setLatitude((float) location.getLatitude());
+        setLongitude((float) location.getLongitude());
+        setEventId(eventId);
     }
+
     public float getLongitude() {
         return longitude;
     }

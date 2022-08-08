@@ -1,5 +1,6 @@
 package com.aqulasoft.fireman.mobile.ui.postlogin.fragments;
 
+import static com.aqulasoft.fireman.mobile.base.utils.FiremanSettings.LOCATION_PACK_SIZE;
 import static com.aqulasoft.fireman.mobile.base.utils.FiremanSettings.LOCATION_SEND_TIME_INTERVAL;
 
 import android.Manifest;
@@ -19,8 +20,9 @@ import androidx.core.app.ActivityCompat;
 import com.aqulasoft.fireman.mobile.base.repository.tracker.TrackerService;
 import com.aqulasoft.fireman.mobile.databinding.FragmentGpsInfoBinding;
 import com.aqulasoft.fireman.mobile.ui.base.BaseFragment;
-import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehicleStatRequest;
+import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehiclePositionDto;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -38,6 +40,10 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
 
     private LocationManager locationManager;
     private TrackerService trackerService;
+
+    private ArrayList<VehiclePositionDto> lastLocations;
+    private String vehicleId = "PaulVehicle"; //TODO: delete this field in future, need to get this data
+    private String eventId = "60"; //TODO: delete this field in future, need to get this data
 
     private LocationListener locationListener = new LocationListener() {
 
@@ -76,6 +82,7 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
     public GpsInfoFragment() {
         // Required empty public constructor
         trackerService = new TrackerService();
+        lastLocations = new ArrayList<>();
     }
 
 
@@ -94,9 +101,13 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
         System.out.println(location.getLatitude());
         System.out.println(location.getLongitude());
         System.out.println("\n");
+        //TODO: Getting vehicleId and Getting eventId
 
-
-
+        lastLocations.add(new VehiclePositionDto(location, eventId));
+        if (lastLocations.size() > LOCATION_PACK_SIZE) {
+            System.out.println("Sending data...");
+            trackerService.addPoints(lastLocations, vehicleId);
+        }
     }
 
     public Observable<Location> schedule() {
@@ -115,7 +126,8 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mBinding.btnLocationSettings.setOnClickListener(this::onClickLocationSettings);
-
+        mBinding.btnChangeEventID.setOnClickListener(this::onClickChangeEventId);
+        mBinding.textEventId.setText("Event ID: " + eventId);
     }
 
     @Override
@@ -166,12 +178,12 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
             return "";
         }
         System.out.println(String.format(
-                "Coordinates: lat = %1$.4f, lon = %2$.4f, time = %3$tF %3$tT",
+                "Latitude = %1$.4f\nLongitude = %2$.4f\nTime = %3$tF %3$tT",
                 location.getLatitude(), location.getLongitude(), new Date(
                         location.getTime())));
 
         return String.format(
-                "Coordinates: lat = %1$.4f, lon = %2$.4f, time = %3$tF %3$tT",
+                "Latitude = %1$.4f\nLongitude = %2$.4f\nTime = %3$tF %3$tT",
                 location.getLatitude(), location.getLongitude(), new Date(
                         location.getTime()));
     }
@@ -191,5 +203,13 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
         startActivity(new Intent(
                 android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
     }
+
+    public void onClickChangeEventId(View view) {
+        Integer newEventId = Integer.parseInt(eventId);
+        newEventId++;
+        eventId = newEventId.toString();
+        mBinding.textEventId.setText("Event ID: " + eventId);
+    }
+
 
 }

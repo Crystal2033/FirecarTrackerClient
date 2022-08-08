@@ -6,6 +6,11 @@ public class VehiclePositionRequest {
     private String vehicleId;
     private ArrayList<VehiclePositionDto> positions;
 
+    public VehiclePositionRequest(ArrayList<VehiclePositionDto> positions, String vehicleId) {
+        setPositions(positions);
+        setVehicleId(vehicleId);
+    }
+
     public String getVehicleId() {
         return vehicleId;
     }
@@ -13,6 +18,7 @@ public class VehiclePositionRequest {
     public void setVehicleId(String vehicleId) {
         this.vehicleId = vehicleId;
     }
+
 
     public ArrayList<VehiclePositionDto> getPositions() {
         return positions;

@@ -4,12 +4,14 @@ import static com.aqulasoft.fireman.mobile.base.utils.FiremanSettings.TRACKER_HO
 
 import androidx.annotation.NonNull;
 
+import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehiclePositionDto;
 import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehiclePositionRequest;
 import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehicleStatRequest;
 
+import java.util.ArrayList;
+
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.observers.DisposableObserver;
-import io.reactivex.rxjava3.observers.DisposableSingleObserver;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
@@ -28,28 +30,62 @@ public class TrackerService {
         trackerApi = retrofit.create(TrackerApi.class);
     }
 
-    public void addPoints(VehiclePositionRequest req) {
-        trackerApi.addLocationsPack(req);
+    public void addPoints(ArrayList<VehiclePositionDto> lastLocations, String vehicleId) {
+        trackerApi.addLocationsPack(new VehiclePositionRequest(lastLocations, vehicleId))
+                .subscribeOn(Schedulers.computation()) // everything above and under is on computation thread
+                .doOnNext(request -> { //computation thread
+                            System.out.println("ThreadName : " + Thread.currentThread().getName());
+                            System.out.println("Vehicle: " + request.getVehicleId());
+
+                        }
+                )
+                .observeOn(AndroidSchedulers.mainThread()) //everything under is on the main thread
+                .subscribe(new DisposableObserver<VehiclePositionRequest>() { //mainThread
+                    @Override
+                    public void onNext(@NonNull VehiclePositionRequest request) {
+                        System.out.println("ThreadName : " + Thread.currentThread().getName());
+                        System.out.println("Vehicle: " + request.getVehicleId());
+                        PrintLocations(request);
+                    }
+
+                    private void PrintLocations(@NonNull VehiclePositionRequest request) {
+                        int i = 0;
+                        for (VehiclePositionDto pos : request.getPositions()) {
+                            System.out.println(++i + ". ( " + pos.getLatitude() + ", " + pos.getLongitude() + " )");
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        System.out.println("Something has gone wrong. Saving locations. " + e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        System.out.println("Everything is okay. Data has been sent. Deleting locations");
+                        lastLocations.clear();
+                    }
+                });
     }
 
     public void addVehicle(VehicleStatRequest req) {
         trackerApi.addVehicle(req)
                 .subscribeOn(Schedulers.computation())
-                .doOnNext(  x -> {
-                    System.out.println(x.getVehicleId() + " This is vehicle Id next on " + Thread.currentThread().getName());
-                } )
+                .doOnNext(request -> {
+                    System.out.println(request.getVehicleId() + " This is vehicle Id next on " + Thread.currentThread().getName());
+                })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new DisposableObserver<VehicleStatRequest>() {
 
                     @Override
                     public void onNext(@NonNull VehicleStatRequest request) {
-                        System.out.println(request + " Yahooo car has been added " + req.getVehicleId() +  " " +  Thread.currentThread().getName());
+                        System.out.println(request + "Car has been added " + req.getVehicleId() + " " + Thread.currentThread().getName());
 
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        System.out.println(e + " FUCK");
+                        System.out.println(e);
                     }
 
                     @Override

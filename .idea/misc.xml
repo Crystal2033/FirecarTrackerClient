@@ -3,46 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/activity_main.xml" value="0.27853260869565216" />
-        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/fragment_gps_info.xml" value="0.17755825734549138" />
-        <entry key="..\:/Users/Timofey.LAPTOP-KQGJSA46/JetBrains/IdeaProjects/Aqula/Android/FR_13/TrackerClient/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/Timofey.LAPTOP-KQGJSA46/JetBrains/IdeaProjects/Aqula/Android/FR_13/TrackerClient/app/src/main/res/layout/dialog_accept.xml" value="0.1" />
-        <entry key="..\:/Users/Timofey.LAPTOP-KQGJSA46/JetBrains/IdeaProjects/Aqula/Android/FR_13/TrackerClient/app/src/main/res/layout/fragment_gps_info.xml" value="0.1" />
-        <entry key="..\:/Users/Timofey.LAPTOP-KQGJSA46/JetBrains/IdeaProjects/Aqula/Android/FR_13/TrackerClient/app/src/main/res/layout/toolbar_logo.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_bottom_line.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_button.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_checkbox.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_checkbox_selected.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_event.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_gradient_line.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_link.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_link_light.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_pin_button.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_radio_btn_selector.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_radio_btn_unselected.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_switch.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_switch_selector.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_switch_thumb_selector.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_text_edit.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/background_text_edit_enabled_selector.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/checkbox_selector.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/ic_accept_small.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/ic_back_arrow.xml" value="0.1865" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/ic_cursor.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/drawable-v24/ic_progress_intermediate.xml" value="0.1" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/layout/activity_main.xml" value="0.16" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/layout/dialog_accept.xml" value="0.19947916666666668" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/layout/fragment_gps_info.xml" value="0.33" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/layout/toolbar_logo.xml" value="0.19947916666666668" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1015" />
-        <entry key="..\:/Users/woipot/Downloads/Fireman/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1015" />
+        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/drawable-v24/background_bottom_line.xml" value="0.291" />
+        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/fragment_gps_info.xml" value="0.2" />
+        <entry key="..\:/Paul/Programming/Android/Fireman/TrackerClient/app/src/main/res/layout/toolbar_logo.xml" value="0.160081053698075" />
       </map>
     </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
   </component>
 </project>
