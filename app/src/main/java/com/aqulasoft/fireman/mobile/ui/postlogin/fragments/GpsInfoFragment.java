@@ -105,11 +105,11 @@ public class GpsInfoFragment extends BaseFragment<FragmentGpsInfoBinding> implem
         System.out.println("\n");
         //TODO: Getting vehicleId and Getting eventId
 
-//        lastLocations.add(new VehiclePositionDto(location, eventId));
-//        if (lastLocations.size() > LOCATION_PACK_SIZE) {
-//            System.out.println("Sending data...");
-//            trackerService.addPoints(lastLocations, vehicleId);
-//        }
+        lastLocations.add(new VehiclePositionDto(location, eventId));
+        if (lastLocations.size() > LOCATION_PACK_SIZE) {
+            System.out.println("Sending data...");
+            trackerService.addPoints(lastLocations, vehicleId);
+        }
     }
 
     public Observable<Location> schedule() {

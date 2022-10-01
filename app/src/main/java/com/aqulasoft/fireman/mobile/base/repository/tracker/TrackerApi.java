@@ -4,8 +4,6 @@ import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehiclePositionRequest;
 import com.aqulasoft.fireman.mobile.ui.postlogin.models.VehicleStatRequest;
 
 import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.Single;
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 

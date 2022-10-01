@@ -18,7 +18,7 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TrackerService {
-    private TrackerApi trackerApi;
+    private final TrackerApi trackerApi;
 
     public TrackerService() {
         Retrofit retrofit = new Retrofit.Builder()
